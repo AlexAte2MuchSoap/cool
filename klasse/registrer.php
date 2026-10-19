@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cursor: pointer;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: ##00A30E;
         }
         .message {
             padding: 10px;
