@@ -49,11 +49,27 @@ require_once '../data.php';
         a:hover {
             text-decoration: underline;
         }
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Alle klasser</h1>
+
+        <!-- Melding om at dataene er oppdatert -->
+        <div class="message success">
+            Klassenes data er oppdatert og viser nå alle registrerte klasser.
+        </div>
+
         <table>
             <tr>
                 <th>Klassekode</th>
@@ -73,3 +89,4 @@ require_once '../data.php';
     </div>
 </body>
 </html>
+
