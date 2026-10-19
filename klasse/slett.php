@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Slett</button>
         </form>
 
-        <a href="../index.php">Tilbake til hovedside</a>
+        <a href="index.php">Tilbake til hovedside</a>
     </div>
 </body>
 </html>
