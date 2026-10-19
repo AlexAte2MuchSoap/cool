@@ -11,7 +11,7 @@ require_once '../data.php';
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: black;
+            background-color: white;
         }
         .container {
             max-width: 1000px;
@@ -22,7 +22,7 @@ require_once '../data.php';
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #2c3e50;
+            color: black;
         }
         table {
             width: 100%;
