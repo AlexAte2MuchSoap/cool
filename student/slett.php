@@ -6,20 +6,26 @@ $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $brukernavn = $_POST['brukernavn'];
+    $bekreft = $_POST['bekreft'] ?? '';
 
-    // Slett studenten
-    $found = false;
-    foreach ($studenter as $key => $student) {
-        if ($student['brukernavn'] == $brukernavn) {
-            unset($studenter[$key]);
-            $success = "Studenten med brukernavn '$brukernavn' er slettet!";
-            $found = true;
-            break;
+    // Sjekk om brukeren har bekreftet sletting
+    if ($bekreft !== 'ja') {
+        $error = "Du må bekrefte slettingen for å fortsette!";
+    } else {
+        // Slett studenten
+        $found = false;
+        foreach ($studenter as $key => $student) {
+            if ($student['brukernavn'] == $brukernavn) {
+                unset($studenter[$key]);
+                $success = "Studenten med brukernavn '$brukernavn' er slettet!";
+                $found = true;
+                break;
+            }
         }
-    }
 
-    if (!$found) {
-        $error = "Studenten med brukernavn '$brukernavn' eksisterer ikke!";
+        if (!$found) {
+            $error = "Studenten med brukernavn '$brukernavn' eksisterer ikke!";
+        }
     }
 }
 ?>
@@ -54,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         label {
             font-weight: bold;
         }
-        select {
+        select, input[type="checkbox"] {
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -82,6 +88,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .error {
             background-color: #f8d7da;
             color: #721c24;
+        }
+        .confirmation {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         a {
             display: inline-block;
@@ -117,6 +128,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php endforeach; ?>
                 </select>
             </label>
+
+            <div class="confirmation">
+                <input type="checkbox" name="bekreft" id="bekreft" value="ja" required>
+                <label for="bekreft">Er du sikker på at du vil slette denne studenten?</label>
+            </div>
+
             <button type="submit">Slett</button>
         </form>
 
@@ -124,4 +141,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
-
