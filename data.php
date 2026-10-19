@@ -7,9 +7,9 @@ $klasser = [
 ];
 
 $studenter = [
-    ['brukernavn' => 'gb', 'fornavn' => 'Geir', 'etternavn' => 'Bjarvin', 'klassekode' => 'IT1'],
-    ['brukernavn' => 'mrj', 'fornavn' => 'Marius R.', 'etternavn' => 'Johannessen', 'klassekode' => 'IT1'],
-    ['brukernavn' => 'tb', 'fornavn' => 'Tove', 'etternavn' => 'Bøe', 'klassekode' => 'IT2'],
+    ['brukernavn' => 'bb', 'fornavn' => 'Bob', 'etternavn' => 'Bobson', 'klassekode' => 'IT1'],
+    ['brukernavn' => 'mm', 'fornavn' => 'Mark', 'etternavn' => 'Markson', 'klassekode' => 'IT1'],
+    ['brukernavn' => 'tt', 'fornavn' => 'Toby', 'etternavn' => 'Tobson', 'klassekode' => 'IT2'],
 ];
 
 // Funksjoner for å lagre dataene til filer (valgfritt)
