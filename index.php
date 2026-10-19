@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedlikehold av KLASSE og STUDENT</title>
+    <title>Peak nettsted</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
         h1 { color: #2c3e50; }
@@ -33,7 +33,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Vedlikehold av KLASSE og STUDENT</h1>
+        <h1>Peak brukerfunskjoner</h1>
         <ul>
             <li><a href="klasse/registrer.php">Registrer ny klasse</a></li>
             <li><a href="klasse/vis.php">Vis alle klasser</a></li>
