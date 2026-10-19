@@ -6,7 +6,7 @@
     <title>Peak nettsted</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
-        h1 { color: #2c3e50; }
+        h1 { color: black; }
         ul { list-style-type: none; padding: 0; }
         li { margin: 10px 0; }
         a {
