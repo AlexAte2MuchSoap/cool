@@ -11,7 +11,7 @@ require_once '../data.php';
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
+            background-color: black;
         }
         .container {
             max-width: 1000px;
@@ -69,7 +69,7 @@ require_once '../data.php';
             <?php endforeach; ?>
         </table>
 
-        <a href="../index.php">Tilbake til hovedside</a>
+        <a href="index.php">Tilbake til hovedside</a>
     </div>
 </body>
 </html>
