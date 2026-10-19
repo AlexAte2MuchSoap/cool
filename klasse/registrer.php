@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Registrer ny klasse</title>
+    <title>Registrer klasse</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f9f9f9;
+            background-color: black;
         }
         .container {
             max-width: 600px;
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         button {
             padding: 10px 15px;
-            background-color: #3498db;
+            background-color: #AAFF00;
             color: white;
             border: none;
             border-radius: 4px;
