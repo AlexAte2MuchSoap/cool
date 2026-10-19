@@ -1,5 +1,4 @@
 <?php
-require_once '../index.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $klassekode = $_POST['klassekode'];
