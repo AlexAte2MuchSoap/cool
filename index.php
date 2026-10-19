@@ -23,7 +23,7 @@ require_once 'data.php';
             transition: background-color 0.3s;
         }
         a:hover {
-            background-color: #2980b9;
+            background-color: #00A30E;
         }
         .container {
             max-width: 800px;
