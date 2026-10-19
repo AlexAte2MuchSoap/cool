@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         button {
             padding: 10px 15px;
             background-color: #AAFF00;
-            color: white;
+            color: black;
             border: none;
             border-radius: 4px;
             cursor: pointer;
