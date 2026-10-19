@@ -85,7 +85,7 @@ require_once '../data.php';
             <?php endforeach; ?>
         </table>
 
-        <a href="../index.php">Tilbake til hovedside</a>
+        <a href="index.php">Tilbake til hovedside</a>
     </div>
 </body>
 </html>
