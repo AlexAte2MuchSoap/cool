@@ -81,14 +81,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         button {
             padding: 10px 15px;
-            background-color: #3498db;
+            background-color: #AAFF00;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: #00A30E;
         }
         .message {
             padding: 10px;
