@@ -1,12 +1,34 @@
 <?php
 require_once '../data.php';
+
+$success = "";
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $brukernavn = $_POST['brukernavn'];
+
+    // Slett studenten
+    $found = false;
+    foreach ($studenter as $key => $student) {
+        if ($student['brukernavn'] == $brukernavn) {
+            unset($studenter[$key]);
+            $success = "Studenten med brukernavn '$brukernavn' er slettet!";
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        $error = "Studenten med brukernavn '$brukernavn' eksisterer ikke!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Vis alle studenter</title>
+    <title>Slett en student</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +36,7 @@ require_once '../data.php';
             background-color: #f9f9f9;
         }
         .container {
-            max-width: 1000px;
+            max-width: 600px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
@@ -24,21 +46,42 @@ require_once '../data.php';
         h1 {
             color: black;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        th, td {
+        label {
+            font-weight: bold;
+        }
+        select {
+            padding: 8px;
             border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
+            border-radius: 4px;
         }
-        th {
-            background-color: #f2f2f2;
+        button {
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        button:hover {
+            background-color: #c0392b;
+        }
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
         }
         a {
             display: inline-block;
@@ -53,36 +96,32 @@ require_once '../data.php';
 </head>
 <body>
     <div class="container">
-        <h1>Alle studenter</h1>
-        <table>
-            <tr>
-                <th>Brukernavn</th>
-                <th>Fornavn</th>
-                <th>Etternavn</th>
-                <th>Klassekode</th>
-                <th>Klassnavn</th>
-            </tr>
-            <?php foreach ($studenter as $student): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($student['brukernavn']); ?></td>
-                    <td><?php echo htmlspecialchars($student['fornavn']); ?></td>
-                    <td><?php echo htmlspecialchars($student['etternavn']); ?></td>
-                    <td><?php echo htmlspecialchars($student['klassekode']); ?></td>
-                    <td>
-                        <?php
-                        foreach ($klasser as $klasse) {
-                            if ($klasse['klassekode'] == $student['klassekode']) {
-                                echo htmlspecialchars($klasse['klassnavn']);
-                                break;
-                            }
-                        }
-                        ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
+        <h1>Slett en student</h1>
+
+        <?php if (!empty($success)): ?>
+            <div class="message success"><?php echo $success; ?></div>
+        <?php endif; ?>
+
+        <?php if (!empty($error)): ?>
+            <div class="message error"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <form method="post">
+            <label>Velg student:
+                <select name="brukernavn" required>
+                    <option value="">-- Velg en student --</option>
+                    <?php foreach ($studenter as $student): ?>
+                        <option value="<?php echo htmlspecialchars($student['brukernavn']); ?>">
+                            <?php echo htmlspecialchars($student['brukernavn'] . " - " . $student['fornavn'] . " " . $student['etternavn']); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </label>
+            <button type="submit">Slett</button>
+        </form>
 
         <a href="index.php">Tilbake til hovedside</a>
     </div>
 </body>
-</
+</html>
+
