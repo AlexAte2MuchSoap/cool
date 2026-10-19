@@ -1,0 +1,61 @@
+<?php
+require_once '../db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $klassekode = $_POST['klassekode'];
+    $klassnavn = $_POST['klassnavn'];
+    $studiumkode = $_POST['studiumkode'];
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO KLASSE (klassekode, klassnavn, studiumkode) VALUES (?, ?, ?)");
+        $stmt->execute([$klassekode, $klassnavn, $studiumkode]);
+        $success = "Klasse registrert!";
+    } catch (PDOException $e) {
+        $error = "Feil ved registrering: " . $e->getMessage();
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer ny klasse</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: bold; }
+        input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 10px 15px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #2980b9; }
+        .message { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        a { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrer ny klasse</h1>
+
+        <?php if (isset($success)): ?>
+            <div class="message success"><?php echo $success; ?></div>
+        <?php endif; ?>
+
+        <?php if (isset($error)): ?>
+            <div class="message error"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <form method="post">
+            <label>Klassekode: <input type="text" name="klassekode" required></label>
+            <label>Klassnavn: <input type="text" name="klassnavn" required></label>
+            <label>Studiumkode: <input type="text" name="studiumkode" required></label>
+            <button type="submit">Registrer</button>
+        </form>
+
+        <a href="../index.php">Tilbake til hovedside</a>
+    </div>
+</body>
+</html>
