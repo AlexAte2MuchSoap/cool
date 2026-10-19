@@ -118,6 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Registrer</button>
         </form>
 
+        <a href="index.php">Tilbake til hovedside</a>
     </div>
 </body>
 </html>
