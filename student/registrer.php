@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'klassekode' => $klassekode
         ];
         $success = "Student registrert!";
-        // lagreData(); // Fjern kommentaren hvis du vil lagre til fil
+        // lagreData(); // Fjern kommentaren hvis man vil lagre til fil
     }
 }
 ?>
