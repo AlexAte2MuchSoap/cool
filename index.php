@@ -35,12 +35,12 @@
     <div class="container">
         <h1>Peak brukerfunskjoner</h1>
         <ul>
-            <li><a href="klasse/registrer.php">Registrer ny klasse</a></li>
+            <li><a href="klasse/registrer.php">Registrer klasse</a></li>
             <li><a href="klasse/vis.php">Vis alle klasser</a></li>
-            <li><a href="klasse/slett.php">Slett en klasse</a></li>
-            <li><a href="student/registrer.php">Registrer ny student</a></li>
+            <li><a href="klasse/slett.php">Slett klasse</a></li>
+            <li><a href="student/registrer.php">Registrer student</a></li>
             <li><a href="student/vis.php">Vis alle studenter</a></li>
-            <li><a href="student/slett.php">Slett en student</a></li>
+            <li><a href="student/slett.php">Slett student</a></li>
         </ul>
     </div>
 </body>
