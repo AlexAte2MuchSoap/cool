@@ -65,11 +65,6 @@ require_once '../data.php';
     <div class="container">
         <h1>Alle klasser</h1>
 
-        <!-- Melding om at dataene er oppdatert -->
-        <div class="message success">
-            Klassenes data er oppdatert og viser nå alle registrerte klasser.
-        </div>
-
         <table>
             <tr>
                 <th>Klassekode</th>
