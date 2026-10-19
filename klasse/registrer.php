@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <h1>Registrer ny klasse</h1>
+        <h1>Registrer klasse</h1>
 
         <?php if (!empty($success)): ?>
             <div class="message success"><?php echo $success; ?></div>
