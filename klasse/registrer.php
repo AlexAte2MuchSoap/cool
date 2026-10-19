@@ -10,14 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studiumkode = $_POST['studiumkode'];
 
     // Sjekk om klassen allerede eksisterer
+    $klasseEksisterer = false;
     foreach ($klasser as $klasse) {
         if ($klasse['klassekode'] == $klassekode) {
-            $error = "Klassen med kode '$klassekode' eksisterer allerede!";
+            $klasseEksisterer = true;
             break;
         }
     }
 
-    if (empty($error)) {
+    if ($klasseEksisterer) {
+        $error = "Klassen med kode '$klassekode' eksisterer allerede!";
+    } else {
+        // Legg til den nye klassen
         $klasser[] = [
             'klassekode' => $klassekode,
             'klassnavn' => $klassnavn,
@@ -122,3 +126,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
+
