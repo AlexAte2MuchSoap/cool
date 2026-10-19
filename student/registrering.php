@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Registrer ny student</title>
+    <title>Registrer student</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <h1>Registrer ny student</h1>
+        <h1>Registrer student</h1>
 
         <?php if (!empty($success)): ?>
             <div class="message success"><?php echo $success; ?></div>
