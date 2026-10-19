@@ -12,7 +12,7 @@
         a {
             display: inline-block;
             padding: 10px 15px;
-            background-color: #AAFF00
+            background-color: #AAFF00;
             color: black;
             text-decoration: none;
             border-radius: 5px;
